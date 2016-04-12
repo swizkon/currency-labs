@@ -11,7 +11,6 @@ namespace CurrencyApplication.Models
     public class CurrencyIndex
     {
         [XmlElement("row")]
-        // []
         public List<ExchangeRate> Rates { get; set; }
     }
 }

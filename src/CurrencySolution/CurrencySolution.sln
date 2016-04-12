@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyApplication", "Curr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyTestConsole", "CurrencyTestConsole\CurrencyTestConsole.csproj", "{73E7ADFA-08A0-477F-891D-57A8A171F750}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyMvcApplication", "CurrencyMvcApplication\CurrencyMvcApplication.csproj", "{7006E30F-525B-4D85-8DC5-4539D582FF1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{73E7ADFA-08A0-477F-891D-57A8A171F750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E7ADFA-08A0-477F-891D-57A8A171F750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E7ADFA-08A0-477F-891D-57A8A171F750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7006E30F-525B-4D85-8DC5-4539D582FF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7006E30F-525B-4D85-8DC5-4539D582FF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7006E30F-525B-4D85-8DC5-4539D582FF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7006E30F-525B-4D85-8DC5-4539D582FF1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

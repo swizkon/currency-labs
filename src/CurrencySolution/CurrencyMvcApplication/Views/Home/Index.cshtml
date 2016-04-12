@@ -1,0 +1,72 @@
+﻿
+
+<header>
+    <h1 class="col-md-8 col-md-offset-2">Currency app</h1>
+</header>
+
+<div class="row">
+    <div id="exchange-settings" class="col-md-8 col-md-offset-2">
+        <button href="#" class="btn btn-primary btn-lg">Get exchange rates</button>
+        <input name="swiftCodes" value="USD,EUR" type="hidden" />
+    </div>
+</div>
+
+<div class="row">
+
+    <div id="exchange-rates" class="col-md-8 col-md-offset-2">
+        <span class="muted-text text-muted">PRESS THE BUTTON TO FETCH THE RATES</span>
+    </div>
+</div>
+
+
+<script type="text/x-handlebars-template" id="rates-template">
+    <div class="row">
+        {{#each rates}}
+        <div class="col-md-6">
+            <h1>{{this.name}} <small>{{this.swiftCode}}</small></h1>
+            <h2><small>Buy</small> {{this.buy}}</h2>
+            <h2><small>Sell</small> {{this.sell}}</h2>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
+
+    <script type="text/javascript">
+
+        var app = (function () {
+            var transFunc = Handlebars.compile($("#rates-template").html())
+            var s = {
+                transform: function (body, target) {
+                    $(target).html(transFunc(body));
+                }
+            };
+
+            return s;
+        })();
+
+
+        $(document).ready(function () {
+            $("#exchange-settings button").click(function () {
+                // get the exchange rates and pop the rates container...
+                $.getJSON("/api/exchangerates?swiftCodes=" + $("input[name=swiftCodes]").val(), function (data) {
+
+                    var rates = $.map(data, function (rate, i) {
+                        return {
+                            "code": rate.SwiftCode,
+                            "name": rate.SwiftName,
+                            "swiftCode": rate.SwiftCode,
+                            "sell": rate.Sell,
+                            "buy": rate.Buy
+                        };
+                    });
+
+                    app.transform({ "rates": rates }, "#exchange-rates");
+                });
+            });
+        });
+    </script>
+}

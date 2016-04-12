@@ -13,9 +13,9 @@ namespace CurrencyTestConsole
         static void Main(string[] args)
         {
 
-            ICurrencyInfo listing = new ForexExchange();
+            ICurrencyExchangeService listing = new ForexExchange();
 
-            var gagga = listing.LookupRates("USD", "EUR", "NOK");
+            var gagga = listing.LookupRatesAsync("USD", "EUR", "NOK");
 
             foreach (var cc in gagga.Result)
                 Console.WriteLine(cc.SwiftName + ": " + cc.Sell);

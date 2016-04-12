@@ -42,7 +42,7 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICurrencyInfo.cs" />
+    <Compile Include="ICurrencyExchangeService.cs" />
     <Compile Include="Models\CurrencyIndex.cs" />
     <Compile Include="Models\ExchangeRate.cs" />
     <Compile Include="Impl\ForexExchange.cs" />
